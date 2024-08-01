@@ -3,11 +3,11 @@
 
 > There is a CollectionistLink for serialization purposes
 
-![Scriptable Object Link Picture](https://mentallystable4sure.dev/assets/images/git/so.png)
+![Scriptable Object Link Picture](https://bunbun.cloud/assets/images/git/so.png)
 
 > Drag and drop it to any `[SerializedField] private CollectionistLink _link;` field and initialize it (usually on startup of your app)
 
-![Scriptable Object Link Picture](https://mentallystable4sure.dev/assets/images/git/so1.png)
+![Scriptable Object Link Picture](https://bunbun.cloud/assets/images/git/so1.png)
 
 ```
 public class Initializer : MonoBehaviour
