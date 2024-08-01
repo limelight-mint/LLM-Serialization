@@ -2,12 +2,12 @@
 [Unity] [Extension] Extension for all the services in your app/game and basic initialization thru ScriptableObject links, no need to have a mess with 9999 serialized fields, use just one and share the date across .NET or Unity Objects!
 
 > There is a CollectionistLink for serialization purposes
+
 ![Scriptable Object Link Picture](https://mentallystable4sure.dev/assets/images/git/so.png)
 
-
 > Drag and drop it to any `[SerializedField] private CollectionistLink _link;` field and initialize it (usually on startup of your app)
-![Scriptable Object Link Picture](https://mentallystable4sure.dev/assets/images/git/so1.png)
 
+![Scriptable Object Link Picture](https://mentallystable4sure.dev/assets/images/git/so1.png)
 
 ```
 public class Initializer : MonoBehaviour
