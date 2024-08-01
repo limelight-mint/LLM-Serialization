@@ -1,4 +1,4 @@
-
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace MentallyStable.Serialization.Links
@@ -12,11 +12,12 @@ namespace MentallyStable.Serialization.Links
         /// </summary>
         public Collectionist Service { get; private set; }
 
-        public void Create(ServiceCollection servicesList)
+        public Collectionist Create(ServiceCollection servicesList)
         {
             Service = new Collectionist(servicesList);
+            return Service;
         }
 
-        public async void Initialize() => await Service.Initialize();
+        public async UniTask Initialize() => await Service.Initialize();
     }
 }

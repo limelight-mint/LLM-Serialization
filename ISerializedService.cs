@@ -1,9 +1,10 @@
+using Cysharp.Threading.Tasks;
 
 namespace MentallyStable.Serialization
 {
 
     public interface ISerializedService 
     {
-        public void Initialize();
+        public UniTask Initialize();
     }
 }
