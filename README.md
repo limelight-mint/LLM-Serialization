@@ -1,6 +1,13 @@
 # LLM-Serialization
 [Unity] [Extension] Extension for all the services in your app/game and basic initialization thru ScriptableObject links, no need to have a mess with 9999 serialized fields, use just one and share the date across .NET or Unity Objects!
 
+### Ok but how to actually use it?
+<sub>Yes, just as other our LLM-Packages we highly tied with UniTask since coroutines is cringe and the only way i will use it in WebGL cause its 1 threaded</sub>
+
+> Required <a href="https://github.com/Cysharp/UniTask">UniTask</a> itself, so first-thing-first install a .unitypackage <a href="https://github.com/Cysharp/UniTask/releases">from this link</a>.
+> Can be used for default .NET classes if you install UniTask as NuGet package. Also feel free to change whatever you want or collab.
+<hr></hr>
+
 > There is a CollectionistLink for serialization purposes
 
 ![Scriptable Object Link Picture](https://bunbun.cloud/assets/images/git/so.png)
@@ -67,6 +74,8 @@ public void TryLogin(string username, string password)
 <hr></hr>
 
 
+### Injections?
+<sub>TODO: Change array injections to the more proper way (class or auto-inject reflection)</sub>
 > [!CAUTION]
 > If you gonna use Injections (if you need some services to be inside other services, for example our SaveService neeeded LoginService to get GET request from server with all user inventory), then you NEED to .Add(service) SERVICES IN ORDER! so the first services initialized first, and those who depends on them are the last one. Here is example of service used injection:
 
