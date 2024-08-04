@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 
-namespace MentallyStable.Serialization
+namespace LLM.Serialization
 {
 
     public interface ISerializedService 

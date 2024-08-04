@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 
-namespace MentallyStable.Serialization.Base
+namespace LLM.Serialization.Base
 {
 
     public interface IService

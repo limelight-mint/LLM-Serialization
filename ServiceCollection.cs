@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using MentallyStable.Serialization.Base;
+using LLM.Serialization.Base;
 
-namespace MentallyStable.Serialization
+namespace LLM.Serialization
 {
     public class ServiceCollection
     {

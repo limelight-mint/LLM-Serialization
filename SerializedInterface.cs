@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MentallyStable.Serialization
+namespace LLM.Serialization
 {
     [Serializable]
     public class SerializedInterface<T>

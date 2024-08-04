@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace MentallyStable.Serialization.Links
+namespace LLM.Serialization.Links
 {
 
     [CreateAssetMenu(fileName = "CollectionistLink", menuName = "Services/Links/CollectionistLink", order = 1)]

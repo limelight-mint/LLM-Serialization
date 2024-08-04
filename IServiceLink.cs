@@ -1,6 +1,6 @@
-using MentallyStable.Serialization;
+using LLM.Serialization;
 
-namespace MentallyStable.Serialization.Base
+namespace LLM.Serialization.Base
 {
 
     public interface IServiceLink : ISerializedService
