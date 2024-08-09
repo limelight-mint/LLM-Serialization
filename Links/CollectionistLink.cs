@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using LLM.Serialization.Base;
 
 namespace LLM.Serialization.Links
 {
