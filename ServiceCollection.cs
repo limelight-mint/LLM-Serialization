@@ -9,7 +9,7 @@ namespace LLM.Serialization
     {
         protected Dictionary<Type, IService> Services;
 
-        public bool IsInitialized { get; private set; }
+        public bool IsInitialized { get; protected set; }
 
         public ServiceCollection()
         {
