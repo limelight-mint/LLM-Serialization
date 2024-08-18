@@ -56,6 +56,12 @@ namespace LLM.Serialization
             DynamicServices.Remove<TService>();
             return this;
         }
+
+        public TService Get<TService>()
+            where TService : IService
+        {
+            return StaticServices.Has(typeof(TService)) ? StaticServices.Get<TService>() : DynamicServices.Get<TService>();
+        }
         
         public void Get<T1>(out T1 param1)
             where T1 : IService
