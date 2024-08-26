@@ -111,12 +111,14 @@ namespace LLM.Serialization
             var injectionQueue = service.InjectionQueue;
 
             if(injectionQueue.Count <= 0) return;
+
             List<IService> servicesReadyForInjection = new List<IService>();
-            foreach (var serviceToInject in Services)
+
+            foreach (var serviceToInject in injectionQueue)
             {
-                if(!injectionQueue.Contains(serviceToInject.Key)) continue;
-                servicesReadyForInjection.Add(serviceToInject.Value);
-                injectionQueue.Remove(serviceToInject.Key);
+                if(!Services.ContainsKey(serviceToInject)) continue;
+                servicesReadyForInjection.Add(Services[serviceToInject]);
+                UnityEngine.Debug.LogError("Injecting: "+Services[serviceToInject]);
             }
 
             service.Inject(servicesReadyForInjection.ToArray());

@@ -10,7 +10,7 @@ namespace LLM.Serialization.Base
         public UniTask Initialize();
 
         public bool IsInitialized { get; }
-        public List<Type> InjectionQueue { get { return new List<Type>(0); } }
+        public virtual List<Type> InjectionQueue { get { return new List<Type>(0); } }
 
         public void Inject(params IService[] servicesToInject);
 
