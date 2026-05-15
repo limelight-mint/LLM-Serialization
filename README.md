@@ -15,11 +15,11 @@
 # Static Services
 > There is a CollectionistLink for serialization purposes if you want to get services in `MonoBehaviour` objects
 
-![Scriptable Object Link Picture](https://bunbun.cloud/assets/images/git/so.png)
+![Scriptable Object Link Picture](https://eepywitches.cloud/assets/images/git/so.png)
 
 > Drag and drop it to any `[SerializedField] private CollectionistLink _link;` field and initialize it (usually on startup of your app)
 
-![Scriptable Object Link Picture](https://bunbun.cloud/assets/images/git/so1.png)
+![Scriptable Object Link Picture](https://eepywitches.cloud/assets/images/git/so1.png)
 
 > Register service you wanna use in this collectionist (`_link.Service` to get actual service from the link whenever you want)
 ```
@@ -102,7 +102,7 @@ _globalCollection.Service.Get<HoyoFpsUnlocker, HoyoClientWrapper>(out var fpsUnl
 > [!CAUTION]
 > If you gonna use Injections (if you need some services to be inside other services, for example our SaveService neeeded LoginService to get GET request from server with all user inventory), then you NEED to .Add(service) SERVICES IN ORDER! so the first services initialized first, and those who depends on them are the last one. Here is example of service used injection:
 
-![Example Code Picture](https://bunbun.cloud/assets/images/git/injections.png)
+![Example Code Picture](https://eepywitches.cloud/assets/images/git/injections.png)
 
 > [!NOTE] 
 > You can use/create new links for any service if you want, but thats not that efficient since collectionist already contains everything inside. But we are not stopping u...
