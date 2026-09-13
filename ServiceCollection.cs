@@ -21,7 +21,7 @@ namespace LLM.Serialization
             foreach (var item in Services.Values)
             {
                 if(item.IsInitialized) continue;
-                item.Initialize().Forget();
+                item.Initialize(this).Forget();
             }
             IsInitialized = true;
         }
@@ -31,7 +31,7 @@ namespace LLM.Serialization
             foreach (var item in Services.Values)
             {
                 if(item.IsInitialized) continue;
-                await item.Initialize();
+                await item.Initialize(this);
             }
             IsInitialized = true;
         }
@@ -44,7 +44,6 @@ namespace LLM.Serialization
         public virtual ServiceCollection Add(IService service)
         {
             IsInitialized = false; //just in case so developer will use Build()
-            InjectNeededServices(service);
             Services.Add(service.GetType(), service);
             return this;
         }
@@ -52,6 +51,7 @@ namespace LLM.Serialization
         public virtual ServiceCollection Remove(IService service)
         {
             if(!Has(service)) return this;
+
             service.OnServiceDispose();
             Services.Remove(service.GetType());
             return this;
@@ -61,6 +61,7 @@ namespace LLM.Serialization
             where TService : IService
         {
             if(!Has(typeof(TService))) return this;
+
             Services[typeof(TService)].OnServiceDispose();
             Services.Remove(typeof(TService));
             return this;
@@ -104,24 +105,6 @@ namespace LLM.Serialization
         {
             Get<T1, T2, T3>(out param1, out param2, out param3);
             param4 = Get<T4>();
-        }
-
-        private void InjectNeededServices(IService service)
-        {
-            var injectionQueue = service.InjectionQueue;
-
-            if(injectionQueue.Count <= 0) return;
-
-            List<IService> servicesReadyForInjection = new List<IService>();
-
-            foreach (var serviceToInject in injectionQueue)
-            {
-                if(!Services.ContainsKey(serviceToInject)) continue;
-                servicesReadyForInjection.Add(Services[serviceToInject]);
-                UnityEngine.Debug.LogError("Injecting: "+Services[serviceToInject]);
-            }
-
-            service.Inject(servicesReadyForInjection.ToArray());
         }
 
         public void Dispose()
