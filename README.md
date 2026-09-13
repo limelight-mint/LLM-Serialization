@@ -97,7 +97,7 @@ _globalCollection.Service.Get<HoyoFpsUnlocker, HoyoClientWrapper>(out var fpsUnl
 
 # Injections
 > [!CAUTION]
-> If you gonna use Injections (if you need some services to be inside other services, for example our ConfigService needs SaveService), then you NEED to .Add(service) SERVICES IN ORDER! You can only get services registered BEFORE the current (in our case ConfigService) service:
+> If you gonna use Injections (if you need some services to be inside other services, for example our `ConfigService` needs `SaveService`), then you NEED to `.Add(service)` **SERVICES IN ORDER**! You can only get services registered **BEFORE** the current (in our case `ConfigService`) service:
 
 ```
 public class ConfigService : IService
