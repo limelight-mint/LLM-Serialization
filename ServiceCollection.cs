@@ -74,37 +74,48 @@ namespace LLM.Serialization
             return (T)service;
         }
 
-        public void Get<T1>(out T1 param1)
+        public void Get<T1>(out T1 service1)
             where T1 : IService
         {
-            param1 = Get<T1>();
+            service1 = Get<T1>();
         }
 
-        public void Get<T1, T2>(out T1 param1, out T2 param2)
+        public void Get<T1, T2>(out T1 service1, out T2 service2)
             where T1 : IService
             where T2 : IService
         {
-            Get<T1>(out param1);
-            param2 = Get<T2>();
+            Get<T1>(out service1);
+            service2 = Get<T2>();
         }
 
-        public void Get<T1, T2, T3>(out T1 param1, out T2 param2, out T3 param3)
+        public void Get<T1, T2, T3>(out T1 service1, out T2 service2, out T3 service3)
             where T1 : IService
             where T2 : IService
             where T3 : IService
         {
-            Get<T1, T2>(out param1, out param2);
-            param3 = Get<T3>();
+            Get<T1, T2>(out service1, out service2);
+            service3 = Get<T3>();
         }
 
-        public void Get<T1, T2, T3, T4>(out T1 param1, out T2 param2, out T3 param3, out T4 param4)
+        public void Get<T1, T2, T3, T4>(out T1 service1, out T2 service2, out T3 service3, out T4 service4)
             where T1 : IService
             where T2 : IService
             where T3 : IService
             where T4 : IService
         {
-            Get<T1, T2, T3>(out param1, out param2, out param3);
-            param4 = Get<T4>();
+            Get<T1, T2, T3>(out service1, out service2, out service3);
+            service4 = Get<T4>();
+        }
+
+        public void Get<T1, T2, T3, T4, T5>(out T1 service1, out T2 service2, out T3 service3, out T4 service4, out T5 service5)
+            where T1 : IService
+            where T2 : IService
+            where T3 : IService
+            where T4 : IService
+            where T5 : IService
+        {
+            Get<T1, T2, T3, T4>(out service1, out service2, out service3, out service4);
+            service5 = Get<T5>();
         }
 
         public void Dispose()

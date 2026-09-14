@@ -77,54 +77,48 @@ namespace LLM.Serialization
             return StaticServices.Has(typeof(TService)) ? StaticServices.Get<TService>() : DynamicServices.Get<TService>();
         }
 
-        public void Get<T1>(out T1 param1)
+        public void Get<T1>(out T1 service1)
             where T1 : IService
         {
-            param1 = StaticServices.Has(typeof(T1)) ? StaticServices.Get<T1>() : DynamicServices.Get<T1>();
+            service1 = StaticServices.Has(typeof(T1)) ? StaticServices.Get<T1>() : DynamicServices.Get<T1>();
         }
 
-        public void Get<T1, T2>(out T1 param1, out T2 param2)
+        public void Get<T1, T2>(out T1 service1, out T2 service2)
             where T1 : IService
             where T2 : IService
         {
-            param1 = StaticServices.Has(typeof(T1)) ? StaticServices.Get<T1>() : DynamicServices.Get<T1>();
-            param2 = StaticServices.Has(typeof(T2)) ? StaticServices.Get<T2>() : DynamicServices.Get<T2>();
+            Get<T1>(out service1);
+            service2 = StaticServices.Has(typeof(T2)) ? StaticServices.Get<T2>() : DynamicServices.Get<T2>();
         }
 
-        public void Get<T1, T2, T3>(out T1 param1, out T2 param2, out T3 param3)
+        public void Get<T1, T2, T3>(out T1 service1, out T2 service2, out T3 service3)
             where T1 : IService
             where T2 : IService
             where T3 : IService
         {
-            param1 = StaticServices.Has(typeof(T1)) ? StaticServices.Get<T1>() : DynamicServices.Get<T1>();
-            param2 = StaticServices.Has(typeof(T2)) ? StaticServices.Get<T2>() : DynamicServices.Get<T2>();
-            param3 = StaticServices.Has(typeof(T3)) ? StaticServices.Get<T3>() : DynamicServices.Get<T3>();
+            Get<T1, T2>(out service1, out service2);
+            service3 = StaticServices.Has(typeof(T3)) ? StaticServices.Get<T3>() : DynamicServices.Get<T3>();
         }
 
-        public void Get<T1, T2, T3, T4>(out T1 param1, out T2 param2, out T3 param3, out T4 param4)
+        public void Get<T1, T2, T3, T4>(out T1 service1, out T2 service2, out T3 service3, out T4 service4)
             where T1 : IService
             where T2 : IService
             where T3 : IService
             where T4 : IService
         {
-            param1 = StaticServices.Has(typeof(T1)) ? StaticServices.Get<T1>() : DynamicServices.Get<T1>();
-            param2 = StaticServices.Has(typeof(T2)) ? StaticServices.Get<T2>() : DynamicServices.Get<T2>();
-            param3 = StaticServices.Has(typeof(T3)) ? StaticServices.Get<T3>() : DynamicServices.Get<T3>();
-            param4 = StaticServices.Has(typeof(T4)) ? StaticServices.Get<T4>() : DynamicServices.Get<T4>();
+            Get<T1, T2, T3>(out service1, out service2, out service3);
+            service4 = StaticServices.Has(typeof(T4)) ? StaticServices.Get<T4>() : DynamicServices.Get<T4>();
         }
 
-        public void Get<T1, T2, T3, T4, T5>(out T1 param1, out T2 param2, out T3 param3, out T4 param4, out T5 param5)
+        public void Get<T1, T2, T3, T4, T5>(out T1 service1, out T2 service2, out T3 service3, out T4 service4, out T5 service5)
             where T1 : IService
             where T2 : IService
             where T3 : IService
             where T4 : IService
             where T5 : IService
         {
-            param1 = StaticServices.Has(typeof(T1)) ? StaticServices.Get<T1>() : DynamicServices.Get<T1>();
-            param2 = StaticServices.Has(typeof(T2)) ? StaticServices.Get<T2>() : DynamicServices.Get<T2>();
-            param3 = StaticServices.Has(typeof(T3)) ? StaticServices.Get<T3>() : DynamicServices.Get<T3>();
-            param4 = StaticServices.Has(typeof(T4)) ? StaticServices.Get<T4>() : DynamicServices.Get<T4>();
-            param5 = StaticServices.Has(typeof(T5)) ? StaticServices.Get<T5>() : DynamicServices.Get<T5>();
+            Get<T1, T2, T3, T4>(out service1, out service2, out service3, out service4);
+            service5 = StaticServices.Has(typeof(T5)) ? StaticServices.Get<T5>() : DynamicServices.Get<T5>();
         }
 
         public void OnServiceDispose()
